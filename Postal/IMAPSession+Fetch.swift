@@ -126,7 +126,7 @@ extension IndexSet {
         
         rangeView.forEach { (range) in
             let safeLocation = UInt32(truncatingBitPattern: range.startIndex)
-            let safeLength = UInt32(truncatingBitPattern: range.upperBound)
+            let safeLength = UInt32(truncatingBitPattern: range.upperBound - 1)
 
             mailimap_set_add_interval(result, safeLocation, safeLength)
         }
